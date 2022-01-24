@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".GradeItemActivity" />
+        <activity android:name=".DividerActivity" />
+        <activity android:name=".LinearLayoutDividerActivity" />
+        <activity android:name=".GridLayoutDividerActivity" />
     </application>
 
 </manifest>

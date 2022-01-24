@@ -11,22 +11,21 @@ import androidx.appcompat.app.AppCompatActivity;
  * @author parting_soul
  * @date 2022/1/23
  */
-public class MainActivity extends AppCompatActivity {
-
+public class DividerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_main);
+        setContentView(R.layout.act_divider);
     }
 
     public void onClick(View view) {
         Class<?> clazz = null;
         switch (view.getId()) {
-            case R.id.bt_divider:
-                clazz = DividerActivity.class;
+            case R.id.bt_linear_divider:
+                clazz = LinearLayoutDividerActivity.class;
                 break;
-            case R.id.bt_grade_item:
-                clazz = GradeItemActivity.class;
+            case R.id.bt_Grid_divider:
+                clazz = GridLayoutDividerActivity.class;
                 break;
             default:
                 break;
