@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         Class<?> clazz = null;
         switch (view.getId()) {
+            case R.id.bt_simple_use:
+                clazz = SimpleUseActivity.class;
+                break;
             case R.id.bt_divider:
                 clazz = DividerActivity.class;
                 break;

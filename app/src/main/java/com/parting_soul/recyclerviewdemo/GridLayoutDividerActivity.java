@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.parting_soul.recyclerviewdemo.item_decor.CustomDividerItemDecoration;
 import com.parting_soul.recyclerviewdemo.item_decor.CustomGridDividerItemDecoration;
 
 /**
