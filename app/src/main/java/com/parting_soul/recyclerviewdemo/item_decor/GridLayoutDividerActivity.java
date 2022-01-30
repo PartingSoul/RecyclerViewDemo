@@ -1,4 +1,4 @@
-package com.parting_soul.recyclerviewdemo;
+package com.parting_soul.recyclerviewdemo.item_decor;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -17,9 +17,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.parting_soul.recyclerviewdemo.item_decor.CustomGridDividerItemDecoration;
+import com.parting_soul.recyclerviewdemo.R;
 
 /**
+ * 网格分割线
+ *
  * @author parting_soul
  * @date 2022/1/23
  */

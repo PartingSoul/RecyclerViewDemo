@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.parting_soul.recyclerviewdemo.item_decor.DividerActivity;
+import com.parting_soul.recyclerviewdemo.pre_load.PreLoadActivity;
+
 /**
  * @author parting_soul
  * @date 2022/1/23
@@ -30,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.bt_grade_item:
                 clazz = GradeItemActivity.class;
+                break;
+            case R.id.bt_motion_event:
+                clazz = MotionEventActivity.class;
+                break;
+            case R.id.bt_pre_load:
+                clazz = PreLoadActivity.class;
                 break;
             default:
                 break;

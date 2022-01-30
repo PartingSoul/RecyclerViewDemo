@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.scwang.smartrefresh.layout.util.DensityUtil;
@@ -35,41 +36,56 @@ public class SimpleUseActivity extends AppCompatActivity {
     private List<String> lists = new ArrayList<>();
 
     {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 35; i++) {
             lists.add("android" + i);
         }
     }
 
     private void initRecyclerView() {
-        RecyclerView rv = findViewById(R.id.rv);
+        final RecyclerView rv = findViewById(R.id.rv);
         rv.setHasFixedSize(true);
         final DataAdapter adapter = new DataAdapter(this, lists);
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setLayoutManager(new LinearLayoutManager(this, OrientationHelper.VERTICAL, false));
         rv.setAdapter(adapter);
 
         rv.postDelayed(new Runnable() {
             @Override
             public void run() {
-                lists.removeAll(lists);
-                lists.add("aaaaaa");
-                adapter.notifyDataSetChanged();
+//                lists.removeAll(lists);
+//                lists.add("aaaaaa");
+//                adapter.notifyDataSetChanged();
+//                rv.scrollToPosition(1);
             }
         }, 3 * 1000);
+
+
+        adapter.setOnItemClickListener(new DataAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position, View target) {
+//                rv.scrollToPosition(position - 20);
+            }
+        });
     }
 
     private static class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         private static final String TAG = "DataAdapter===>>";
         private Context context;
         private List<String> dataList;
+        private OnItemClickListener mOnItemClickListener;
 
         public DataAdapter(Context context, List<String> list) {
             this.context = context;
             this.dataList = list;
+            count = 0;
         }
+
+        static int count;
 
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+            count++;
+            Log.e("onCreateViewHolder", "count = " + count);
             return new ViewHolder(
                     LayoutInflater.from(context).inflate(R.layout.adapter_item,
                             viewGroup, false)
@@ -77,7 +93,7 @@ public class SimpleUseActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
             viewHolder.tv.setText(dataList.get(i));
             viewHolder.itemView.setBackgroundColor(Color.RED);
 
@@ -85,6 +101,15 @@ public class SimpleUseActivity extends AppCompatActivity {
                     viewHolder.itemView.getLayoutParams();
             int margin = DensityUtil.dp2px(10);
             params.setMargins(margin, margin, margin, margin);
+
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mOnItemClickListener != null) {
+                        mOnItemClickListener.onItemClick(viewHolder.getAdapterPosition(), viewHolder.itemView);
+                    }
+                }
+            });
 
             Log.e(TAG, "height = " + viewHolder.itemView.getHeight()
                     + " width = " + viewHolder.itemView.getWidth());
@@ -95,6 +120,10 @@ public class SimpleUseActivity extends AppCompatActivity {
             return dataList.size();
         }
 
+        public void setOnItemClickListener(OnItemClickListener listener) {
+            this.mOnItemClickListener = listener;
+        }
+
         static class ViewHolder extends RecyclerView.ViewHolder {
             TextView tv;
 
@@ -103,5 +132,11 @@ public class SimpleUseActivity extends AppCompatActivity {
                 tv = itemView.findViewById(R.id.tv_content);
             }
         }
+
+        interface OnItemClickListener {
+            void onItemClick(int position, View target);
+        }
     }
+
+
 }

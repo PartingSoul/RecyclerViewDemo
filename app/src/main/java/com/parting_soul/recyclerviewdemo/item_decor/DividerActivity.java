@@ -1,4 +1,4 @@
-package com.parting_soul.recyclerviewdemo;
+package com.parting_soul.recyclerviewdemo.item_decor;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.parting_soul.recyclerviewdemo.R;
 
 /**
  * @author parting_soul

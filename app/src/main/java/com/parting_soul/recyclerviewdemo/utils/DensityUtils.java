@@ -1,4 +1,4 @@
-package com.parting_soul.recyclerviewdemo;
+package com.parting_soul.recyclerviewdemo.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

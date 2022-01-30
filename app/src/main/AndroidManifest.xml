@@ -17,10 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".GradeItemActivity" />
-        <activity android:name=".DividerActivity" />
-        <activity android:name=".LinearLayoutDividerActivity" />
-        <activity android:name=".GridLayoutDividerActivity" />
+        <activity android:name=".item_decor.DividerActivity" />
+        <activity android:name=".item_decor.LinearLayoutDividerActivity" />
+        <activity android:name=".item_decor.GridLayoutDividerActivity" />
         <activity android:name=".SimpleUseActivity" />
+        <activity android:name=".MotionEventActivity" />
+        <activity android:name=".pre_load.PreLoadActivity" />
+        <activity android:name=".pre_load.PreLoad2Activity" />
+        <activity android:name=".pre_load.PreLoad1Activity" />
     </application>
 
 </manifest>

@@ -1,8 +1,13 @@
-package com.parting_soul.recyclerviewdemo;
+package com.parting_soul.recyclerviewdemo.item_decor;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,16 +18,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.OrientationHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.parting_soul.recyclerviewdemo.item_decor.CustomDividerItemDecoration;
+import com.parting_soul.recyclerviewdemo.R;
 import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 /**
+ * 列表分割线
+ *
  * @author parting_soul
  * @date 2022/1/23
  */
