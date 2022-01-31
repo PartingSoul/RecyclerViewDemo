@@ -21,20 +21,22 @@
         android:textAllCaps="false" />
 
     <Button
-        android:id="@+id/bt_grade_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="分级Item"
-        android:textAllCaps="false" />
-
-    <Button
         android:id="@+id/bt_pre_load"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
         android:text="数据预加载"
         android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/bt_item_drag_and_remove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Item拖拽与移除"
+        android:textAllCaps="false" />
+
 
     <Button
         android:id="@+id/bt_motion_event"
@@ -44,5 +46,13 @@
         android:text="MotionEvent 多点触控"
         android:textAllCaps="false" />
 
+
+    <Button
+        android:id="@+id/bt_grade_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="分级Item"
+        android:textAllCaps="false" />
 
 </LinearLayout>

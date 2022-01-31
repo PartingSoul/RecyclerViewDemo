@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.parting_soul.recyclerviewdemo.item_decor.DividerActivity;
+import com.parting_soul.recyclerviewdemo.item_drag.ItemDragAndRemoveActivity;
 import com.parting_soul.recyclerviewdemo.pre_load.PreLoadActivity;
 
 /**
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.bt_pre_load:
                 clazz = PreLoadActivity.class;
+                break;
+            case R.id.bt_item_drag_and_remove:
+                clazz = ItemDragAndRemoveActivity.class;
                 break;
             default:
                 break;

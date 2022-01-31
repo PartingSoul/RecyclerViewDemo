@@ -36,6 +36,10 @@ public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder
         notifyDataSetChanged();
     }
 
+    public List<String> getDataList() {
+        return mDataList;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

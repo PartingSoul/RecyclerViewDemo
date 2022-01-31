@@ -25,6 +25,7 @@
         <activity android:name=".pre_load.PreLoadActivity" />
         <activity android:name=".pre_load.PreLoad2Activity" />
         <activity android:name=".pre_load.PreLoad1Activity" />
+        <activity android:name=".item_drag.ItemDragAndRemoveActivity" />
     </application>
 
 </manifest>
