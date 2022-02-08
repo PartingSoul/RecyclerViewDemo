@@ -43,9 +43,9 @@ public class SimpleUseActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         final RecyclerView rv = findViewById(R.id.rv);
-        rv.setHasFixedSize(true);
         final DataAdapter adapter = new DataAdapter(this, lists);
         rv.setLayoutManager(new LinearLayoutManager(this, OrientationHelper.VERTICAL, false));
+        adapter.setHasStableIds(true);
         rv.setAdapter(adapter);
 
         rv.postDelayed(new Runnable() {
@@ -62,7 +62,18 @@ public class SimpleUseActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new DataAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View target) {
-//                rv.scrollToPosition(position - 20);
+                rv.scrollToPosition(position - 20);
+//            adapter.dataList.remove(position);
+//            adapter.notifyItemRemoved(position);
+
+//                adapter.dataList.add(position, "侧事故" + position);
+//                adapter.notifyItemInserted(position);
+//                adapter.notifyItemMoved(position, position + 1);
+
+//                adapter.dataList.set(position, "测试item " + position);
+//                adapter.dataList.remove(position);
+//                adapter.notifyItemChanged(position, new Object());
+//                adapter.notifyDataSetChanged();
             }
         });
     }
@@ -116,6 +127,11 @@ public class SimpleUseActivity extends AppCompatActivity {
         }
 
         @Override
+        public long getItemId(int position) {
+            return dataList.get(position).hashCode();
+        }
+
+        @Override
         public int getItemCount() {
             return dataList.size();
         }
@@ -131,6 +147,7 @@ public class SimpleUseActivity extends AppCompatActivity {
                 super(itemView);
                 tv = itemView.findViewById(R.id.tv_content);
             }
+
         }
 
         interface OnItemClickListener {
